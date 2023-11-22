@@ -13,43 +13,46 @@
 </head>
 <body>
 	<section id="about">
-		<p>Created by Akira Shemansky, Angela Ambriz, Jiecheng Zhu, Kaya Levin, Raquel Herrera-Bernardino, and Shiyen Yang</p>
+		<p><b>What's for Dinner Tonight?</b> - Created by Akira Shemansky, Angela Ambriz, Jiecheng Zhu, Kaya Levin,
+			Raquel Herrera-Bernardino, and Shiyen Yang</p>
 	</section>
 
 	<section id="title-screen">
-		<h1>Dinner for Tonight</h1>
-		<button id="options">Options</button>
-		<p1 id="questions" style="display: none;">
-			<br>
-			To better confirm your dinner, please answer some questions first:<br>
-			<br>
-			Q1: Please select all of the following that may cause you allergies:<br>
-			Egg<br>
-			Dairy<br>
-			Corn<br>
-			Gluten<br>
-			<br>
-			Q2: ...<br>
-			<br>
-			Q3: ...<br>
-			<br>
-			Q4: ...<br>
-			<br>
-			<button1 id="submit">Submit</button1>
-		</p1>
-		<p2 id="results" style="display: none;">
+		<h1>What's for Dinner Tonight?</h1>
+		<button id="options-btn">Options</button>
+	</section>
+
+	<section id="questionaire" style="display: none;">
+		<!--This is where the user is asked questions to determine what foods to show-->
+		<div id="questions">
+			<p1>
+				<br>
+				To better confirm your dinner, please answer some questions first:<br>
+				<br>
+				Q1: Please select all of the following that may cause you allergies:<br>
+				Egg<br>
+				Dairy<br>
+				Corn<br>
+				Gluten<br>
+				<br>
+				Q2: ...<br>
+				<br>
+				Q3: ...<br>
+				<br>
+				Q4: ...<br>
+				<br>
+				<button id="submit-btn">Submit</button>
+			</p1>
+		</div>
+	</section>
+
+	<section id="results" style="display: none;">
+		<!--This is where the selected food and related info are displayed-->
+		<p2>
 			<br>
 			Results<br>
 			<br>
 		</p2>
-	</section>
-
-	<section id="questionaire">
-		<!--This is where the user is asked questions to determine what foods to show-->
-	</section>
-
-	<section id="results">
-		<!--This is where the selected food and related info are displayed-->
 	</section>
 </body>
 </html>
