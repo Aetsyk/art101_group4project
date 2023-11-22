@@ -6,6 +6,15 @@
  */
 
 // Functions
-$("#Options").click(function(){
-
+$(document).ready(function() {
+    $("#options").click(function() {
+        $("#title-screen h1").hide();
+        $(this).hide();
+        $("#questions").show();
+    });
+    $("#submit").click(function() {
+        $("#title-screen p1").hide();
+        $(this).hide();
+        $("#results").show();
+    });
 });
