@@ -9,16 +9,39 @@
 	<link rel="stylesheet" type="text/css" href="dinner.css">
 	
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-	<script src="dinner.js" DEFER></script>
+	<script src="dinner.js" defer></script>
 </head>
 <body>
-	<section id="title-screen">
-		<h1>Dinner for Tonight</h1>
-    	<button id="Options">Options</button>
-	</section>
-
 	<section id="about">
 		<p>Created by Akira Shemansky, Angela Ambriz, Jiecheng Zhu, Kaya Levin, Raquel Herrera-Bernardino, and Shiyen Yang</p>
+	</section>
+
+	<section id="title-screen">
+		<h1>Dinner for Tonight</h1>
+		<button id="options">Options</button>
+		<p1 id="questions" style="display: none;">
+			<br>
+			To better confirm your dinner, please answer some questions first:<br>
+			<br>
+			Q1: Please select all of the following that may cause you allergies:<br>
+			Egg<br>
+			Dairy<br>
+			Corn<br>
+			Gluten<br>
+			<br>
+			Q2: ...<br>
+			<br>
+			Q3: ...<br>
+			<br>
+			Q4: ...<br>
+			<br>
+			<button1 id="submit">Submit</button1>
+		</p1>
+		<p2 id="results" style="display: none;">
+			<br>
+			Results<br>
+			<br>
+		</p2>
 	</section>
 
 	<section id="questionaire">
