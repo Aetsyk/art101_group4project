@@ -24,46 +24,64 @@
 
 	<section id="questionaire" style="display: none;">
 		<!--This is where the user is asked questions to determine what foods to show-->
-		<div id="questions">
+		<div id="questions" class="enclosed-section">
 			<p1>
 				<br>
 				To better confirm your dinner, please answer some questions first:<br>
 				<br>
+
 				Q1: Please select all of the following that may cause you allergies:<br>
-				a. Egg<br>
-				b. Dairy<br>
-				c. Corn<br>
-				d. Gluten<br>
-				e. None of the above<br>
+				<input type="checkbox" id="allergy-egg" name="egg" value="off">
+				<label for="allergy-egg">Egg</label><br>
+				<input type="checkbox" id="allergy-dairy" name="dairy" value="off">
+				<label for="allergy-dairy">Dairy</label><br>
+				<input type="checkbox" id="allergy-corn" name="corn" value="off">
+				<label for="allergy-corn">Corn</label><br>
+				<input type="checkbox" id="allergy-gluten" name="gluten" value="off">
+				<label for="allergy-gluten">Gluten</label><br>
+				<input type="checkbox" id="allergy-shellfish" name="shellfish" value="off">
+				<label for="allergy-shellfish">Shellfish</label><br>
 				<br>
-				Q2: Please choose your prefer:<br>
-				a. Vegetarian<br>
-				b. Vegan<br>
-				c. Low Calorie<br>
-				d. Ketogenic Diet<br>
-				e. None of the above<br>
+
+				Q2: Please select any dietary restrictions:<br>
+				<input type="checkbox" id="diet-vegetarian" name="vegetarian" value="off">
+				<label for="diet-vegetarian">Vegetarian</label><br>
+				<input type="checkbox" id="diet-vegan" name="vegan" value="off">
+				<label for="diet-vegan">Vegan</label><br>
+				<input type="checkbox" id="diet-lowcal" name="lowcal" value="off">
+				<label for="diet-lowcal">Low Calorie</label><br>
+				<input type="checkbox" id="diet-keto" name="keto" value="off">
+				<label for="diet-keto">Ketogenic Diet</label><br>
+				<input type="checkbox" id="diet-halal" name="halal" value="off">
+				<label for="diet-halal">Halal</label><br>
+				<input type="checkbox" id="diet-kosher" name="kosher" value="off">
+				<label for="diet-kosher">Kosher</label><br>
 				<br>
-				Q3: Have you eaten any of the following in the past few hours:<br>
-				a. Alcohol<br>
-				b. Soda<br>
-				c. Seafood<br>
-				d. Drugs<br>
-				e. None of the above<br>
+
+				Q3: Have you ingested any of the following in the past few hours:<br>
+				<input type="checkbox" id="in-alcohol" name="alcohol" value="off">
+				<label for="in-alcohol">Alcohol</label><br>
+				<input type="checkbox" id="in-soda" name="soda" value="off">
+				<label for="in-soda">Soda</label><br>
+				<input type="checkbox" id="in-seafood" name="seafood" value="off">
+				<label for="in-seafood">Seafood</label><br>
+				<input type="checkbox" id="in-drugs" name="drugs" value="off">
+				<label for="in-drugs">Drugs</label><br>
 				<br>
-				Please enter your chosen options into the following box in order (i.e. If you choose "a" for all questions, your enter format is "aaa"):<br>
-				<input type="text" id="options-inorder" placeholder="Enter your choice">
-				<button id="submit-btn">Submit</button>
 			</p1>
+			<button id="submit-btn">Submit</button>
 		</div>
 	</section>
 
 	<section id="results" style="display: none;">
 		<!--This is where the selected food and related info are displayed-->
-		<p2>
-			<br>
-			Results<br>
-			<br>
-		</p2>
+		<div id="results-page" class="enclosed-section">
+			<p2>
+				<br>
+				Results<br>
+				<br>
+			</p2>
+		</div>
 	</section>
 </body>
 </html>

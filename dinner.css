@@ -79,7 +79,7 @@ button {
     padding: 5px;
 }
 
-#questions {
+.enclosed-section {
     background: rgb(188, 222, 234);
     margin: 10px;
     padding: 10px;
