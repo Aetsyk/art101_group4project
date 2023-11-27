@@ -16,7 +16,7 @@ const imgs = [
 $(document).ready(function() {
     let foodList = $("<ul></ul>"); // food listing
     $("#options-btn").click(function() {
-        $("#title-screen h1").hide();
+        $("#title-screen img").hide();
         $(this).hide();
         $("#questionaire").show();
     });
