@@ -14,6 +14,7 @@ const imgs = [
 
 // Functions
 $(document).ready(function() {
+    let foodList = $("<ul></ul>"); // food listing
     $("#options-btn").click(function() {
         $("#title-screen h1").hide();
         $(this).hide();
@@ -24,10 +25,12 @@ $(document).ready(function() {
         $(this).hide();
         $("#results").show();
 
+        foodList = $("<ul></ul>"); 
+
         // this if-else statement is only temporary; a better system will be implemented in the final version
         if ($("#diet-vegan").val() == "on") {
             $("#results-page").append("Dishes recommended for you: Best Herb Roast Potatoes");
-            let foodList = $("<ul></ul>"); // food listing
+            
             const img = new Image(600, 900);
             img.src = "https://www.twopurplefigs.com/wp-content/uploads/2015/11/Best-Herb-Roast-Potatoes-15-e1447983355187.jpg";
             document.body.appendChild(img);
