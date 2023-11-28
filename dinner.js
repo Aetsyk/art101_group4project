@@ -1,7 +1,7 @@
 /*
  * dinner.js
  * Author: Akira Shemansky, Angela Ambriz, Jiecheng Zhu, Kaya Levin, Raquel Herrera-Bernardino, and shiyen yang
- * Date: Nov. 20-22, 2023
+ * Date: Nov. 20-27, 2023
  * License: Public Domain
  */
 
@@ -47,17 +47,17 @@ $(document).ready(function() {
             img.src = "https://beautyandthebrit.com/wp-content/uploads/2015/07/Eggplant-Involtini1.jpg";
             document.body.appendChild(img);
             foodList.append("<li>Eggplant</li>"); 
-             foodList.append("<li>Tomatoes sauces</li>"); 
+            foodList.append("<li>Tomatoes sauces</li>"); 
             foodList.append("<li>basil</li>"); 
-             foodList.append("<li>mozzaerlla</li>"); 
-             foodList.append("<li>Parmesan</li>"); 
-             foodList.append("<li>Ricotta</li>"); 
-             foodList.append("<li>Egg</li>"); 
-             foodList.append("<li>rice flour</li>"); 
-             foodList.append("<li>Garlic</li>"); 
-             foodList.append("<li>salt</li>"); 
-             foodList.append("<li>pepper</li>"); 
-             foodList.append("<li>sugar</li>"); 
+            foodList.append("<li>mozzaerlla</li>"); 
+            foodList.append("<li>Parmesan</li>"); 
+            foodList.append("<li>Ricotta</li>"); 
+            foodList.append("<li>Egg</li>"); 
+            foodList.append("<li>rice flour</li>"); 
+            foodList.append("<li>Garlic</li>"); 
+            foodList.append("<li>salt</li>"); 
+            foodList.append("<li>pepper</li>"); 
+            foodList.append("<li>sugar</li>"); 
 
             
         } else if ($("#allergy-gluten").val() == "on") {
@@ -67,23 +67,23 @@ $(document).ready(function() {
             document.body.appendChild(img);
             foodList.append("<li> Onion</li>");
             foodList.append("<li>onion</li>");
-             foodList.append("<li>ground beef</li>"); 
-             foodList.append("<li>Eggs</li>"); 
-             foodList.append("<li>bredcrumbs- gluten free</li>"); 
-             foodList.append("<li> Ketchup</li>"); 
-             foodList.append("<li>salt</li>"); 
-             foodList.append("<li>black pepper</li>"); 
+            foodList.append("<li>ground beef</li>"); 
+            foodList.append("<li>Eggs</li>"); 
+            foodList.append("<li>bredcrumbs- gluten free</li>"); 
+            foodList.append("<li> Ketchup</li>"); 
+            foodList.append("<li>salt</li>"); 
+            foodList.append("<li>black pepper</li>"); 
             
         } else if ($("#diet-lowcal").val() == "on" || $("#diet-keto").val() == "on") {
             $("#results-page").append("Dishes recommended for you: One-pot chicken & rice");
             const img = new Image(600, 900);
             img.src = "https://www.thedinnerbite.com/wp-content/uploads/2021/02/one-pan-chicken-rice-img.jpg";
             document.body.appendChild(img);
-             foodList.append("<li>any kind of rice</li>"); 
-             foodList.append("<li>Chicken thighs</li>"); 
-             foodList.append("<li>Italian seasoning</li>"); 
-             foodList.append("<li>paprika</li>"); 
-             foodList.append("<li>Salt and Black Pepper</li>"); 
+            foodList.append("<li>any kind of rice</li>"); 
+            foodList.append("<li>Chicken thighs</li>"); 
+            foodList.append("<li>Italian seasoning</li>"); 
+            foodList.append("<li>paprika</li>"); 
+            foodList.append("<li>Salt and Black Pepper</li>"); 
             
         } else {
             $("#results-page").append("Dishes recommended for you: Any Dishes");
@@ -94,13 +94,14 @@ $(document).ready(function() {
                 img.style.backgroundImage = showImg;
             }, 1000); 
         }
-         $("#results").append("<h2>What is needed:</h2>");
-        $("#results").append(foodList); 
+
+        $("#results-page").append("<h2>What is needed:</h2>");
+        $("#results-page").append(foodList); 
     });
 });
 
-$("button").hover(function() {
-    $(this).css("background-color", "rgb(188, 222, 234)");
+$("button").hover(function() { // changes the buttons' color when you hover over them
+    $(this).css("background-color", "#ffcea6");
 },
 function() {
     $(this).css("background-color", "#fff");
