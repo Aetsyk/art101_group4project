@@ -1,7 +1,7 @@
 /*
  * dinner.js
  * Author: Akira Shemansky, Angela Ambriz, Jiecheng Zhu, Kaya Levin, Raquel Herrera-Bernardino, and shiyen yang
- * Date: Nov. 20-27, 2023
+ * Date: Nov. 20, 2023 - Dec. 3, 2023
  * License: Public Domain
  */
 
@@ -18,10 +18,10 @@ $(document).ready(function() {
     $("#options-btn").click(function() {
         $("#title-screen img").hide();
         $(this).hide();
-        $("#questionaire").show();
+        $("#questionnaire").show();
     });
     $("#submit-btn").click(function() {
-        $("#questionaire").hide();
+        $("#questionnaire").hide();
         $(this).hide();
         $("#results").show();
 
