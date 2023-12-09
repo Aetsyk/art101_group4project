@@ -30,9 +30,9 @@
 	<section id="questionnaire" style="display: none;">
 		<!--This is where the user is asked questions to determine what foods to show-->
 		<div id="questions" class="enclosed-section">
-			<p1>
+			<p>
 				<br>
-				To better confirm your dinner, please answer some questions first:<br>
+				<b>To better select your dinner, please answer some questions first:</b><br>
 				<br>
 
 				Q1: Please select all of the following that may cause you allergies:<br>
@@ -74,10 +74,13 @@
 				<label for="in-drugs">Drugs</label><br>
 				<br>
 				
-				04: What type of food are you feeling for: 
-				<input type="checkbox" id="in-warm" name="warm" value="off"> 
-				<label for="in-warm">Warm</label><br> 
-			</p1>
+				Q4: What type of food are you feeling for:<br>
+				<input type="checkbox" id="food-warm" name="warm" value="off"> 
+				<label for="food-warm">Warm</label><br>
+				<input type="checkbox" id="food-cold" name="cold" value="off"> 
+				<label for="food-cold">Cold</label><br>
+				<br>
+			</p>
 			<button id="submit-btn">Submit</button>
 		</div>
 	</section>
@@ -85,11 +88,11 @@
 	<section id="results" style="display: none;">
 		<!--This is where the selected food and related info are displayed-->
 		<div id="results-page" class="enclosed-section">
-			<p2>
+			<p>
 				<br>
 				Results<br>
 				<br>
-			</p2>
+			</p>
 		</div>
 	</section>
 </body>
