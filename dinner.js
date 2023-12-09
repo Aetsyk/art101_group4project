@@ -119,9 +119,9 @@ $(document).ready(function() {
 
         foodList = $("<ul></ul>"); 
 
-        // this if-else statement is only temporary; a better system will be implemented in the final version
+        // this if-else statement was only temporary and has been commented out; only use this as a fall back
         // conflicting options, add more if needed
-        if ($("#diet-keto").val() == "on") {
+        /* if ($("#diet-keto").val() == "on") {
             if ($("#diet-vegetarian").val() == "on" || $("#diet-vegan").val() == "on"){
                 $("#results-page").hide();
                 document.body.append("Ketogenic diet, vegetarian or vegan, cannot exist at the same time. Please refresh the page and make the selection again.");
@@ -206,8 +206,9 @@ $(document).ready(function() {
                 img4.src = "https://www.thedinnerbite.com/wp-content/uploads/2021/02/one-pan-chicken-rice-img.jpg";
                 document.body.appendChild(img4);
             }
-        }
+        } */
     });
+
     $("#more-btn").click(function() {
         document.body.innerHTML = originalBodyContent;
         $("#title-screen img").hide();
@@ -226,6 +227,27 @@ $(document).ready(function() {
         img4.src = "https://spoonacular.com/recipeImages/716426-312x231.jpg";
         document.body.appendChild(img4);
     });
+
+    $.ajax({
+        url: endPoint,
+        // The data to send (user responses to the questions will be sent as data to cater result)
+        data: { 
+                apiKey: apiKey,
+                sort: "random"
+              },
+        type: "GET",
+        dataType : "json",
+        success: function(data) {
+            console.log(data);
+            $("#results-page").append("<h2>" + data.results[0].title + "</h2>");
+            $("#results-page").append("<img src='" + data.results[0].image + "' />");
+            // MORE TO ADD
+        },
+        error: function (jqXHR, textStatus, errorThrown) { 
+            console.log("Error:", textStatus, errorThrown);
+        }
+    });
+    
 });
 
 $("button").hover(function() { // changes the buttons' color when you hover over them
