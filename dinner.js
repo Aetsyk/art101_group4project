@@ -1,7 +1,7 @@
 /*
  * dinner.js
  * Author: Akira Shemansky, Angela Ambriz, Jiecheng Zhu, Kaya Levin, Raquel Herrera-Bernardino, and shiyen yang
- * Date: Nov. 20, 2023 - Dec. 8, 2023
+ * Date: Nov. 20, 2023 - Dec. 10, 2023
  * License: Public Domain
  */
 
@@ -12,101 +12,107 @@ const ajaxParams = {
     data: {
         url: endPoint,
         api_key: apiKey,
+        offset: 0,
+        number: 10,
         results:[
-            {
-                id: 782585,
-                title: "Cannellini Bean and Asparagus Salad with Mushrooms",
-                image: "https://spoonacular.com/recipeImages/782585-312x231.jpg",
-                imageType: "jpg"
-            },
-            {
-                id: 716426,
-                title: "Cauliflower, Brown Rice, and Vegetable Fried Rice",
-                image: "https://spoonacular.com/recipeImages/716426-312x231.jpg",
-                imageType: "jpg"
-            },
-            {
-                id: 715497,
-                title: "Berry Banana Breakfast Smoothie",
-                image: "https://spoonacular.com/recipeImages/715497-312x231.jpg",
-                imageType: "jpg"
-            },
-            {
-                id: 715415,
-                title: "Red Lentil Soup with Chicken and Turnips",
-                image: "https://spoonacular.com/recipeImages/715415-312x231.jpg",
-                imageType: "jpg"
-            },
             {
                 id: 716406,
                 title: "Asparagus and Pea Soup: Real Convenience Food",
                 image: "https://spoonacular.com/recipeImages/716406-312x231.jpg",
-                imageType: "jpg"
+                imageType: "jpg",
+                recipe: "https://api.spoonacular.com/recipes/716406/information?apiKey=da77cacb407a489a896802b680ad1b4f&diet=paleo"
             },
             {
                 id: 644387,
                 title: "Garlicky Kale",
                 image: "https://spoonacular.com/recipeImages/644387-312x231.jpg",
-                imageType: "jpg"
+                imageType: "jpg",
+                recipe: "https://api.spoonacular.com/recipes/644387/information?apiKey=da77cacb407a489a896802b680ad1b4f&diet=paleo"
             },
             {
-                id: 715446,
-                title: "Slow Cooker Beef Stew",
-                image: "https://spoonacular.com/recipeImages/715446-312x231.jpg",
-                imageType: "jpg"
+                id: 640941,
+                title: "Crunchy Brussels Sprouts Side Dish",
+                image: "https://spoonacular.com/recipeImages/640941-312x231.jpg",
+                imageType: "jpg",
+                recipe: "https://api.spoonacular.com/recipes/640941/information?apiKey=da77cacb407a489a896802b680ad1b4f&diet=paleo"
             },
             {
-                id: 782601,
-                title: "Red Kidney Bean Jambalaya",
-                image: "https://spoonacular.com/recipeImages/782601-312x231.jpg",
-                imageType: "jpg"
+                id: 715540,
+                title: "Summer Berry Salad",
+                image: "https://spoonacular.com/recipeImages/715540-312x231.jpg",
+                imageType: "jpg",
+                recipe: "https://api.spoonacular.com/recipes/715540/information?apiKey=da77cacb407a489a896802b680ad1b4f&diet=paleo"
             },
             {
-                id: 795751,
-                title: "Chicken Fajita Stuffed Bell Pepper",
-                image: "https://spoonacular.com/recipeImages/795751-312x231.jpg",
-                imageType: "jpg"
+                id: 662670,
+                title: "Swiss Chard Wraps",
+                image: "https://spoonacular.com/recipeImages/662670-312x231.jpg",
+                imageType: "jpg",
+                recipe: "https://api.spoonacular.com/recipes/662670/information?apiKey=da77cacb407a489a896802b680ad1b4f&diet=paleo"
             },
             {
-                id: 766453,
-                title: "Hummus and Za'atar",
-                image: "https://spoonacular.com/recipeImages/766453-312x231.jpg",
-                imageType: "jpg"
+                id: 648320,
+                title: "Jade Buddha Salmon Tartare",
+                image: "https://spoonacular.com/recipeImages/648320-312x231.jpg",
+                imageType: "jpg",
+                recipe: "https://api.spoonacular.com/recipes/648320/information?apiKey=da77cacb407a489a896802b680ad1b4f&diet=paleo"
+            },
+            {
+                id: 715543,
+                title: "Homemade Guacamole",
+                image: "https://spoonacular.com/recipeImages/715543-312x231.jpg",
+                imageType: "jpg",
+                recipe: "https://api.spoonacular.com/recipes/715543/information?apiKey=da77cacb407a489a896802b680ad1b4f&diet=paleo"
+            },
+            {
+                id: 658509,
+                title: "Roasted Broccoli with Lemon and Garlic",
+                image: "https://spoonacular.com/recipeImages/658509-312x231.jpg",
+                imageType: "jpg",
+                recipe: "https://api.spoonacular.com/recipes/658509/information?apiKey=da77cacb407a489a896802b680ad1b4f&diet=paleo"
+            },
+            {
+                id: 658579,
+                title: "Roasted Endive Salad With Prosciutto, Figs and Pistachios",
+                image: "https://spoonacular.com/recipeImages/658579-312x231.jpg",
+                imageType: "jpg",
+                recipe: "https://api.spoonacular.com/recipes/658579/information?apiKey=da77cacb407a489a896802b680ad1b4f&diet=paleo"
+            },
+            {
+                id: 637162,
+                title: "Carrot and Cabbage Salad With Coriander+cumin Dry Rub",
+                image: "https://spoonacular.com/recipeImages/637162-312x231.jpg",
+                imageType: "jpg",
+                recipe: "https://api.spoonacular.com/recipes/637162/information?apiKey=da77cacb407a489a896802b680ad1b4f&diet=paleo"
             }
         ],
-        offset: 0,
-        number: 10,
-        totalResults: 5218,
+        totalResults: 397,
     },
     type: "GET",
     dataType: "json",
-    success: ajaxSuccess,
-    error: ajaxError
-}
-
-function ajaxSuccess(data){
-    for (i = 0; i < 10; i++){
-        $("#showMore").append("<p1>" + data.results[i].title + "</p1>");
-        $("#showMore").append("<img src='" + data.results[i].image + "' />");
+    success: function(data) {
+        console.log(data);
+        $("#results-page").append("<h2>" + data.results[0].title + "</h2>");
+        $("#results-page").append("<img src='" + data.results[0].image + "' />");
+        $("#results-page").append("<p2>" + data.results[0].recipe + "</p2>");
+    },
+    error: function (jqXHR, textStatus, errorThrown) { 
+        console.log("Error:", textStatus, errorThrown);
     }
 }
 
-function ajaxError(request, error){
-    console.log("Oops:", request, error);
-}
-
-const imgs = [ 
+/*const imgs = [ 
     'url("https://beautyandthebrit.com/wp-content/uploads/2015/07/Eggplant-Involtini1.jpg")', 
     'url("https://www.twopurplefigs.com/wp-content/uploads/2015/11/Best-Herb-Roast-Potatoes-15-e1447983355187.jpg")', 
     'url("https://www.thespruceeats.com/thmb/rDaFx15hSseKR-naIUSfDuJ5aMo=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/no-fuss-gluten-free-meatloaf-1451043_14-5b1fed743418c600363b3d58.jpg")', 
     'url("https://www.thedinnerbite.com/wp-content/uploads/2021/02/one-pan-chicken-rice-img.jpg")' 
-]; 
+];*/
 
 // store a reference to the original body content
-const originalBodyContent = document.body.innerHTML;
+//const originalBodyContent = document.body.innerHTML;
 
 $(document).ready(function() {
-    let foodList = $("<ul></ul>"); // food listing
+    // let foodList = $("<ul></ul>"); // food listing
     $("#options-btn").click(function() {
         $("#title-screen img").hide();
         $(this).hide();
@@ -117,8 +123,9 @@ $(document).ready(function() {
         $(this).hide();
         $("#results").show();
 
-        foodList = $("<ul></ul>"); 
+        // foodList = $("<ul></ul>"); 
 
+        $.ajax(ajaxParams);
         // this if-else statement was only temporary and has been commented out; only use this as a fall back
         // conflicting options, add more if needed
         /* if ($("#diet-keto").val() == "on") {
@@ -209,7 +216,7 @@ $(document).ready(function() {
         } */
     });
 
-    $("#more-btn").click(function() {
+    /*$("#more-btn").click(function() {
         document.body.innerHTML = originalBodyContent;
         $("#title-screen img").hide();
         $("#options-btn").hide();
@@ -226,27 +233,7 @@ $(document).ready(function() {
         const img4 = new Image(624, 462);
         img4.src = "https://spoonacular.com/recipeImages/716426-312x231.jpg";
         document.body.appendChild(img4);
-    });
-
-    $.ajax({
-        url: endPoint,
-        // The data to send (user responses to the questions will be sent as data to cater result)
-        data: { 
-                apiKey: apiKey,
-                sort: "random"
-              },
-        type: "GET",
-        dataType : "json",
-        success: function(data) {
-            console.log(data);
-            $("#results-page").append("<h2>" + data.results[0].title + "</h2>");
-            $("#results-page").append("<img src='" + data.results[0].image + "' />");
-            // MORE TO ADD
-        },
-        error: function (jqXHR, textStatus, errorThrown) { 
-            console.log("Error:", textStatus, errorThrown);
-        }
-    });
+    });*/
     
 });
 
