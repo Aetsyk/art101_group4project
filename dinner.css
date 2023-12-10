@@ -66,11 +66,11 @@ button {
     transform: translate(-50%);
 }
 
-#more-btn {
+/*#more-btn {
     top: 90%;
     left: 95%;
     transform: translate(-50%);
-}
+}*/
 
 #about {
     background: #777777;
