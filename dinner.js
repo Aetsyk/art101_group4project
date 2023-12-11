@@ -95,12 +95,18 @@ function getFood() {
                 $("#results-page").append("<h2>No results found.</h2>");
                 return // exits out of success function
             }
+
             $("#results-page").append("<h2>" + data.results[0].title + "</h2>");
             $("#results-page").append("<img src='" + data.results[0].image + "' alt='" + data.results[0].sourceUrl + "' />");
             $("#results-page").append("<p>" + data.results[0].summary + "</p>");
     
             $("#credits-page").append("<p>Via: " + data.results[0].creditsText + "</p>");
             $("#credits-page").append("<p><a href='" + data.results[0].sourceUrl + "'>Source</a></p>");
+
+            $("#results-page").append("<ol id='recipe-list'></ol>");
+            data.results[0].analyzedInstructions[0].steps.forEach(element => {
+                $("#recipe-list").append("<li>" + element.step + "</li>");
+            });
         },
         error: function (jqXHR, textStatus, errorThrown) { 
             console.log("Error:", textStatus, errorThrown);
