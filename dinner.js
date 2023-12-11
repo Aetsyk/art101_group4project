@@ -8,6 +8,7 @@
 // important for the ajax call
 const endPoint = "https://api.spoonacular.com/recipes/complexSearch";
 const apiKey = "da77cacb407a489a896802b680ad1b4f";
+const apiKeyAlt = "d4fe7c33d12e4bc380420f6d4cc1703c";
 
 // variables for questionnaire info to be sent to the API
 var intoleranceList = [];
@@ -16,9 +17,17 @@ var excludeIngredientsList = [];
 var calorieLimit = 2000;
 var alcoholLimit = 2000;
 var temperatureChoice = [];
-var challengeList= []; 
+var challengeList= [];
+
 // this function will run the ajax call and output the data to the page
-function getFood() {
+function getFood(useAltKey = false) {
+    var key;
+    if (useAltKey == false) {
+        key = apiKey;
+    } else {
+        key = apiKeyAlt;
+    }
+
     if ($("#allergy-egg").val() == "on") {
         intoleranceList.push("Egg");
     }
@@ -71,29 +80,31 @@ function getFood() {
     if ($("#in-drugs").val() == "on") {
         excludeIngredientsList.push("Drugs"); // ???
     }
+
     if ($("#in-warm").val() == "on") {
         temperatureChoice.push("warm");
     }
-      if ($("#in-cold").val() == "on") {
+    if ($("#in-cold").val() == "on") {
         temperatureChoice.push("cold");
     }
-      if ($("#in-").val() == "on") {
+
+    if ($("#in-").val() == "on") {
         temperatureChoice.push("warm");
     }
-      if ($("#in-challenges").val() == "on") {
+    if ($("#in-challenges").val() == "on") {
       challengeList.push("easy");
     }
-      if ($("#in-challenges").val() == "on") {
+    if ($("#in-challenges").val() == "on") {
       challengeList.push("medium");
     }
-      if ($("#in-challenges").val() == "on") {
+    if ($("#in-challenges").val() == "on") {
       challengeList.push("hard");
     }
 
     $.ajax({
         url: endPoint,
         data: {
-            apiKey: apiKey,
+            apiKey: key,
             number: 1,
             sort: "random",
             type: "main course",
@@ -128,7 +139,11 @@ function getFood() {
             });
         },
         error: function (jqXHR, textStatus, errorThrown) { 
-            console.log("Error:", textStatus, errorThrown);
+            if (useAltKey == false) {
+                getFood(true)
+            } else {
+                console.log("Error:", textStatus, errorThrown);
+            }
         }
     });
 }
