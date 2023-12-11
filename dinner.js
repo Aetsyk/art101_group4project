@@ -5,88 +5,21 @@
  * License: Public Domain
  */
 
+// important for the ajax call
 const endPoint = "https://api.spoonacular.com/recipes/complexSearch";
 const apiKey = "da77cacb407a489a896802b680ad1b4f";
 
+// this object will be passed in an ajax call
 const ajaxParams = {
+    url: endPoint,
     data: {
-        url: endPoint,
-        api_key: apiKey,
-        offset: 0,
-        number: 10,
-        results:[
-            {
-                id: 716406,
-                title: "Asparagus and Pea Soup: Real Convenience Food",
-                image: "https://spoonacular.com/recipeImages/716406-312x231.jpg",
-                imageType: "jpg",
-                recipe: "https://api.spoonacular.com/recipes/716406/information?apiKey=da77cacb407a489a896802b680ad1b4f&diet=paleo"
-            },
-            {
-                id: 644387,
-                title: "Garlicky Kale",
-                image: "https://spoonacular.com/recipeImages/644387-312x231.jpg",
-                imageType: "jpg",
-                recipe: "https://api.spoonacular.com/recipes/644387/information?apiKey=da77cacb407a489a896802b680ad1b4f&diet=paleo"
-            },
-            {
-                id: 640941,
-                title: "Crunchy Brussels Sprouts Side Dish",
-                image: "https://spoonacular.com/recipeImages/640941-312x231.jpg",
-                imageType: "jpg",
-                recipe: "https://api.spoonacular.com/recipes/640941/information?apiKey=da77cacb407a489a896802b680ad1b4f&diet=paleo"
-            },
-            {
-                id: 715540,
-                title: "Summer Berry Salad",
-                image: "https://spoonacular.com/recipeImages/715540-312x231.jpg",
-                imageType: "jpg",
-                recipe: "https://api.spoonacular.com/recipes/715540/information?apiKey=da77cacb407a489a896802b680ad1b4f&diet=paleo"
-            },
-            {
-                id: 662670,
-                title: "Swiss Chard Wraps",
-                image: "https://spoonacular.com/recipeImages/662670-312x231.jpg",
-                imageType: "jpg",
-                recipe: "https://api.spoonacular.com/recipes/662670/information?apiKey=da77cacb407a489a896802b680ad1b4f&diet=paleo"
-            },
-            {
-                id: 648320,
-                title: "Jade Buddha Salmon Tartare",
-                image: "https://spoonacular.com/recipeImages/648320-312x231.jpg",
-                imageType: "jpg",
-                recipe: "https://api.spoonacular.com/recipes/648320/information?apiKey=da77cacb407a489a896802b680ad1b4f&diet=paleo"
-            },
-            {
-                id: 715543,
-                title: "Homemade Guacamole",
-                image: "https://spoonacular.com/recipeImages/715543-312x231.jpg",
-                imageType: "jpg",
-                recipe: "https://api.spoonacular.com/recipes/715543/information?apiKey=da77cacb407a489a896802b680ad1b4f&diet=paleo"
-            },
-            {
-                id: 658509,
-                title: "Roasted Broccoli with Lemon and Garlic",
-                image: "https://spoonacular.com/recipeImages/658509-312x231.jpg",
-                imageType: "jpg",
-                recipe: "https://api.spoonacular.com/recipes/658509/information?apiKey=da77cacb407a489a896802b680ad1b4f&diet=paleo"
-            },
-            {
-                id: 658579,
-                title: "Roasted Endive Salad With Prosciutto, Figs and Pistachios",
-                image: "https://spoonacular.com/recipeImages/658579-312x231.jpg",
-                imageType: "jpg",
-                recipe: "https://api.spoonacular.com/recipes/658579/information?apiKey=da77cacb407a489a896802b680ad1b4f&diet=paleo"
-            },
-            {
-                id: 637162,
-                title: "Carrot and Cabbage Salad With Coriander+cumin Dry Rub",
-                image: "https://spoonacular.com/recipeImages/637162-312x231.jpg",
-                imageType: "jpg",
-                recipe: "https://api.spoonacular.com/recipes/637162/information?apiKey=da77cacb407a489a896802b680ad1b4f&diet=paleo"
-            }
-        ],
-        totalResults: 397,
+        apiKey: apiKey,
+        number: 1,
+        sort: "random",
+        type: "main course",
+        instructionsRequired: true,
+        addRecipeInformation: true,
+        limitLicense: true
     },
     type: "GET",
     dataType: "json",
@@ -94,7 +27,7 @@ const ajaxParams = {
         console.log(data);
         $("#results-page").append("<h2>" + data.results[0].title + "</h2>");
         $("#results-page").append("<img src='" + data.results[0].image + "' />");
-        $("#results-page").append("<p2>" + data.results[0].recipe + "</p2>");
+        $("#results-page").append("<p>" + data.results[0].summary + "</p>");
     },
     error: function (jqXHR, textStatus, errorThrown) { 
         console.log("Error:", textStatus, errorThrown);
