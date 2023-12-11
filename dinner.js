@@ -129,7 +129,8 @@ function getFood(useAltKey = false) {
             $("#results-page").append("<img src='" + data.results[0].image + "' alt='" + data.results[0].sourceUrl + "' />");
             $("#results-page").append("<p>" + data.results[0].summary + "</p>");
     
-            $("#credits-page").append("<p>Via: " + data.results[0].creditsText + "</p>");
+            $("#credits-page").append("<p>Via: <a href='https://spoonacular.com/food-api'>Spoonacular</a></p>");
+            $("#credits-page").append("<p>Recipe by: " + data.results[0].creditsText + "</p>");
             $("#credits-page").append("<p><a href='" + data.results[0].sourceUrl + "'>Source</a></p>");
 
             $("#results-page").append("<ul id='ingredients-list'></ul>");
@@ -142,6 +143,7 @@ function getFood(useAltKey = false) {
                 $("#recipe-list").append("<li>" + element.step + "</li>");
             });
             $("#results-page").show();
+            $("#credits-page").show();
             $("#loading").hide();
         },
         error: function (jqXHR, textStatus, errorThrown) { 
