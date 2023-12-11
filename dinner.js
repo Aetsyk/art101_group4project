@@ -81,13 +81,13 @@ function getFood() {
         temperatureChoice.push("warm");
     }
       if ($("#in-challenges").val() == "on") {
-      challengeList.push("easy");
+      .push("easy");
     }
       if ($("#in-challenges").val() == "on") {
-      challengeList.push("medium");
+      .push("medium");
     }
       if ($("#in-challenges").val() == "on") {
-      challengeList.push("hard");
+      .push("hard");
     }
 
     $.ajax({
