@@ -8,7 +8,7 @@
 // important for the ajax call
 const endPoint = "https://api.spoonacular.com/recipes/complexSearch";
 const apiKey = "da77cacb407a489a896802b680ad1b4f";
-const apiKeyAlt = "d4fe7c33d12e4bc380420f6d4cc1703c";
+const apiKeyAlt = "daeb818317fb4f3390d97d88c06f592f";
 
 // variables for questionnaire info to be sent to the API
 var intoleranceList = [];
