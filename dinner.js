@@ -127,7 +127,8 @@ function getFood(useAltKey = false) {
                 return // exits out of success function
             }
 
-            $("#results-page").append("<h2>" + data.results[0].title + "</h2>");
+            $("#results-page").append("<h3>" + data.results[0].title + "</h3>");
+
             $("#results-page").append("<img src='" + data.results[0].image + "' alt='" + data.results[0].sourceUrl + "' />");
             $("#results-page").append("<p>" + data.results[0].summary + "</p>");
     
@@ -184,4 +185,4 @@ $("#questions input").click(function() {
     } else {
         $(this).val("off");
     }
-});
+})

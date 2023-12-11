@@ -25,15 +25,31 @@ h1 {
     margin: 0;
     padding: 0;
     text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: courier;
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%);
 }
 
+.qHeading {
+    color: #203355;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0;
+    margin: 0;
+    font-size: 30px;
+}
+
+.qSection {
+    color: #d77225;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+}
+
 p {
-    color: #005eff;
+    color: #203355;
     font-family: Arial, sans-serif;
     padding: 0;
     margin: 0;
@@ -46,18 +62,6 @@ p {
     padding: 10px 20px;
     margin: 0 10px;
     font-size: 14px;
-}
-
-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #fff;
-    color: #333;
-    border: none;
-    cursor: pointer;
-    position: absolute;
 }
 
 #options-btn {
@@ -93,4 +97,73 @@ button {
     margin-right: auto;
   }
 
+  h2 {
+    color: #170b44;
+    margin: 0;
+    padding: 0;
+    font-family: courier;
+  }  
+  
+  h3 {
+    color: #100f16;
+    font-size: 3em;
+    margin: 0;
+    padding: 0;
+    font-family: courier;
+  }
 
+  .button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: none;
+    color: #f47e1e;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    position: absolute;
+    margin: 5px;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  .button2 {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: none;
+    color: #170a7b;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
