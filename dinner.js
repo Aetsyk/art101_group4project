@@ -144,7 +144,6 @@ function getFood(useAltKey = false) {
             data.results[0].analyzedInstructions[0].steps.forEach(element => {
                 $("#recipe-list").append("<li>" + element.step + "</li>");
             });
-            $("#results-page").show();
             $("#loading").hide();
         },
         error: function (jqXHR, textStatus, errorThrown) { 
