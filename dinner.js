@@ -15,7 +15,8 @@ var dietList = [];
 var excludeIngredientsList = [];
 var calorieLimit = 2000;
 var alcoholLimit = 2000;
-
+var temperatureChoice = [];
+var challengeList= []; 
 // this function will run the ajax call and output the data to the page
 function getFood() {
     if ($("#allergy-egg").val() == "on") {
@@ -69,6 +70,24 @@ function getFood() {
     }
     if ($("#in-drugs").val() == "on") {
         excludeIngredientsList.push("Drugs"); // ???
+    }
+    if ($("#in-warm").val() == "on") {
+        temperatureChoice.push("warm");
+    }
+      if ($("#in-cold").val() == "on") {
+        temperatureChoice.push("cold");
+    }
+      if ($("#in-").val() == "on") {
+        temperatureChoice.push("warm");
+    }
+      if ($("#in-challenges").val() == "on") {
+      .push("easy");
+    }
+      if ($("#in-challenges").val() == "on") {
+      .push("medium");
+    }
+      if ($("#in-challenges").val() == "on") {
+      .push("hard");
     }
 
     $.ajax({
