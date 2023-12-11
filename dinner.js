@@ -1,7 +1,7 @@
 /*
  * dinner.js
  * Author: Akira Shemansky, Angela Ambriz, Jiecheng Zhu, Kaya Levin, Raquel Herrera-Bernardino, and shiyen yang
- * Date: Nov. 20, 2023 - Dec. 10, 2023
+ * Date: Nov. 20, 2023 - Dec. 11, 2023
  * License: Public Domain
  */
 
@@ -88,9 +88,6 @@ function getFood(useAltKey = false) {
         temperatureChoice.push("cold");
     }
 
-    if ($("#in-").val() == "on") {
-        temperatureChoice.push("warm");
-    }
     if ($("#in-challenges").val() == "on") {
       challengeList.push("easy");
     }
@@ -158,7 +155,6 @@ function getFood(useAltKey = false) {
 }
 
 $(document).ready(function() {
-    // let foodList = $("<ul></ul>"); // food listing
     $("#options-btn").click(function() {
         $("#title-screen img").hide();
         $(this).hide();

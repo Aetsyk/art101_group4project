@@ -4,21 +4,6 @@ body {
   padding: 0;
 }
 
-nav {
-  display: flex;
-  justify-content: left;
-  background: #777777;
-  padding: 10px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  padding: 10px 20px;
-  margin: 0 10px;
-  font-size: 18px;
-}
-
 h1 {
   color: #fff;
   font-size: 5em;
@@ -69,12 +54,6 @@ p {
   left: 50%;
   transform: translate(-50%);
 }
-
-/*#more-btn {
-  top: 90%;
-  left: 95%;
-  transform: translate(-50%);
-}*/
 
 #about {
   background: #777777;
