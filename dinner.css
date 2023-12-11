@@ -82,13 +82,11 @@ p {
 }
 
 .enclosed-section {
-    background: rgb(188, 222, 234);
+    background: #afc9d7;
     margin: 10px;
     padding: 10px;
 }
-.loading{
- 
-}
+
 .title {
     max-width: 700px;
     text-align: center;
@@ -167,3 +165,19 @@ p {
     cursor: pointer;
     margin: 5px;
   }
+
+#loading {
+    text-align: center;
+    margin-top: 0px;
+}
+
+#loading img {
+    width: 600px;  /* Adjust the width as needed */
+    height: 600px; /* Adjust the height as needed */
+}
+
+.results-section {
+  background: #afc9d7;
+  margin: 10px;
+  padding: 10px;
+}
