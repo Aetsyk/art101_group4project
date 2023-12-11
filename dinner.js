@@ -99,7 +99,7 @@ const ajaxParams = {
     error: function (jqXHR, textStatus, errorThrown) { 
         console.log("Error:", textStatus, errorThrown);
     }
-}
+};
 
 /*const imgs = [ 
     'url("https://beautyandthebrit.com/wp-content/uploads/2015/07/Eggplant-Involtini1.jpg")', 
