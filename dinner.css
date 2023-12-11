@@ -161,3 +161,8 @@ h3 {
   padding: 10px;
 }
 
+ul, ol {
+  color: #203355;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
