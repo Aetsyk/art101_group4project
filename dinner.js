@@ -26,8 +26,11 @@ const ajaxParams = {
     success: function(data) {
         console.log(data);
         $("#results-page").append("<h2>" + data.results[0].title + "</h2>");
-        $("#results-page").append("<img src='" + data.results[0].image + "' />");
+        $("#results-page").append("<img src='" + data.results[0].image + "' alt='" + data.results[0].sourceUrl + "' />");
         $("#results-page").append("<p>" + data.results[0].summary + "</p>");
+
+        $("#credits-page").append("<p>Via: " + data.results[0].creditsText + "</p>");
+        $("#credits-page").append("<p><a href='" + data.results[0].sourceUrl + "'>Source</a></p>");
     },
     error: function (jqXHR, textStatus, errorThrown) { 
         console.log("Error:", textStatus, errorThrown);
