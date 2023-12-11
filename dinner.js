@@ -109,6 +109,7 @@ function getFood(useAltKey = false) {
             sort: "random",
             type: "main course",
             instructionsRequired: true,
+            fillIngredients: true,
             addRecipeInformation: true,
             limitLicense: true,
             intolerances: intoleranceList.join(","),
@@ -132,6 +133,11 @@ function getFood(useAltKey = false) {
     
             $("#credits-page").append("<p>Via: " + data.results[0].creditsText + "</p>");
             $("#credits-page").append("<p><a href='" + data.results[0].sourceUrl + "'>Source</a></p>");
+
+            $("#results-page").append("<ul id='ingredients-list'></ul>");
+            data.results[0].extendedIngredients.forEach(element => {
+                $("#ingredients-list").append("<li>" + element.original + "</li>");
+            });
 
             $("#results-page").append("<ol id='recipe-list'></ol>");
             data.results[0].analyzedInstructions[0].steps.forEach(element => {
